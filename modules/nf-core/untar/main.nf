@@ -29,17 +29,17 @@ process UNTAR {
     ## If just files or multiple directories, place all in output
     if [[ \$(tar -tzf ${archive} | grep -o -P "^.*?\\/" | uniq | wc -l) -eq 1 ]]; then
         tar \\
+            --no-same-owner \\
             -C output --strip-components 1 \\
             -xzvf \\
-            --no-same-owner \\
             $args \\
             $archive \\
             $args2
     else
         tar \\
+            --no-same-owner \\
             -C output \\
             -xzvf \\
-            --no-same-owner \\
             $args \\
             $archive \\
             $args2
