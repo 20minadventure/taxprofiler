@@ -31,6 +31,7 @@ process UNTAR {
         tar \\
             -C output --strip-components 1 \\
             -xzvf \\
+            --no-same-owner \\
             $args \\
             $archive \\
             $args2
@@ -38,6 +39,7 @@ process UNTAR {
         tar \\
             -C output \\
             -xzvf \\
+            --no-same-owner \\
             $args \\
             $archive \\
             $args2
